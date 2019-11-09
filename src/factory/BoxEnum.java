@@ -9,6 +9,14 @@ package factory;
  *
  * @author lucas
  */
-public interface Ibox {
+public enum BoxEnum {
+    snake_box(1),
+    ladder_box(2),
+    box(3);
     
+    private int type;
+    
+    BoxEnum(int type){
+        this.type = type;
+    }
 }

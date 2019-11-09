@@ -5,8 +5,9 @@
  */
 package snake.and.ladders;
 
+import factory.BoxEnum;
 import factory.FactoryBox;
-import factory.Ibox;
+import factory.AbstractBox;
 import factory.IfactoryBox;
 
 
@@ -21,8 +22,8 @@ public class SnakeAndLadders {
      */
     public static void main(String[] args) {
         IfactoryBox f = new FactoryBox();
-        Ibox b = f.criaBox("casa");
-        Ibox e = f.criaBox("escada");
+        AbstractBox b = f.createBox(BoxEnum.box, 1, 1, 1);
+        AbstractBox e = f.createBox(BoxEnum.snake_box, 3, 1, 1);
     }
     
 }

@@ -9,6 +9,8 @@ package factory;
  *
  * @author lucas
  */
-public class Snake extends SpecialBox{
-    
+public abstract class SpecialBox extends AbstractBox{  
+    public SpecialBox(int num, int eixoX, int eixoY) {
+        super(num, eixoX, eixoY);
+    }
 }

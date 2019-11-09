@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package factory;
+package box;
+
+import factory.AbstractBox;
 
 /**
  *
  * @author lucas
  */
-public abstract class SpecialBox implements Ibox{
+public class Box extends AbstractBox{
     
+    public Box(int num, int eixoX, int eixoY) {
+        super(num, eixoX, eixoY);
+    }
 }

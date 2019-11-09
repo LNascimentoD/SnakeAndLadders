@@ -9,6 +9,13 @@ package factory;
  *
  * @author lucas
  */
-public interface IfactoryBox {
-    AbstractBox createBox(BoxEnum tipo, int num, int eixoX, int eixoY);
+public abstract class AbstractBox {
+    private int num;
+    private int eixoX, eixoY;
+    
+    public AbstractBox(int num, int eixoX, int eixoY){
+        this.num = num;
+        this.eixoX = eixoX;
+        this.eixoY = eixoY;
+    }
 }

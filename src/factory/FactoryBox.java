@@ -5,20 +5,20 @@
  */
 package factory;
 
+import box.Box;
+
 /**
  *
  * @author lucas
  */
 public class FactoryBox implements IfactoryBox{
-    public Ibox criaBox(String tipo) {
+    public AbstractBox createBox(BoxEnum tipo, int num, int eixoX, int eixoY) {
         switch(tipo){
-            case "casa":
-                return new Box();
-            case "cobra":
-                return new Snake();
-            case "escada":
-                return new Ladder();
-            default: return new Box();
+            case snake_box:
+                return new Snake(num, eixoX, eixoY);
+            case ladder_box:
+                return new Ladder(num, eixoX, eixoY);
+            default: return new Box(num, eixoX, eixoY);
         }
     }
 }

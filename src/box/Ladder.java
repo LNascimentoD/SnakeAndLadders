@@ -3,22 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package strategy;
-
-import factory.AbstractBox;
+package factory;
 
 /**
  *
  * @author lucas
  */
-public class MoveGenerator {
-    AbstractBox box;
-    
-    public MoveGenerator(AbstractBox box){
-        this.box = box;
-    }
-    
-    public void Move(){
-        
+public class Ladder extends SpecialBox{ 
+    public Ladder(int num, int eixoX, int eixoY) {
+        super(num, eixoX, eixoY);
     }
 }

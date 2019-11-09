@@ -9,6 +9,8 @@ package factory;
  *
  * @author lucas
  */
-public class Box implements Ibox{
-    
+public class Snake extends SpecialBox{
+    public Snake(int num, int eixoX, int eixoY) {
+        super(num, eixoX, eixoY);
+    } 
 }

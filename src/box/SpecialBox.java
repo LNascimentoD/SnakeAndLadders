@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package factory;
+package box;
 
 /**
  *
  * @author lucas
  */
-public class Ladder extends SpecialBox{
+public abstract class SpecialBox extends AbstractBox{
     
 }
