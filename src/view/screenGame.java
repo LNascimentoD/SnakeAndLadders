@@ -19,6 +19,7 @@ public class screenGame extends javax.swing.JFrame {
      */
     public screenGame() {
         initComponents();
+        feedBoard f = new feedBoard();
     }
 
     /**

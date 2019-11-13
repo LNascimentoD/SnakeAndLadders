@@ -5,14 +5,13 @@
  */
 package box;
 
-import factory.AbstractBox;
+import box.AbstractBox;
 
 /**
  *
  * @author lucas
  */
 public class Box extends AbstractBox{
-    
     public Box(int num, int eixoX, int eixoY) {
         super(num, eixoX, eixoY);
     }

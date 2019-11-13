@@ -7,7 +7,7 @@ package snake.and.ladders;
 
 import factory.BoxEnum;
 import factory.FactoryBox;
-import factory.AbstractBox;
+import box.AbstractBox;
 import factory.IfactoryBox;
 
 

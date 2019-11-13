@@ -5,7 +5,7 @@
  */
 package strategy;
 
-import factory.AbstractBox;
+import box.AbstractBox;
 
 /**
  *

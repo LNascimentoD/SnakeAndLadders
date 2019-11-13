@@ -10,5 +10,7 @@ package box;
  * @author lucas
  */
 public abstract class SpecialBox extends AbstractBox{
-    
+    public SpecialBox(int num, int eixoX, int eixoY) {
+        super(num, eixoX, eixoY);
+    }
 }
