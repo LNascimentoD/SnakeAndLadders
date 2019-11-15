@@ -6,19 +6,16 @@
 package strategy;
 
 import box.AbstractBox;
+import model.Player;
 
 /**
  *
  * @author lucas
  */
-public class MoveGenerator {
-    AbstractBox box;
-    
-    public MoveGenerator(AbstractBox box){
-        this.box = box;
-    }
-    
-    public void Move(){
-        
+public class MoveBox implements Move{
+    public void move(AbstractBox box, Player p) {
+        p.setPosicao(box.getNum());
+        p.setEixoX(box.getEixoX());
+        p.setEixoY(box.getEixoY());
     }
 }

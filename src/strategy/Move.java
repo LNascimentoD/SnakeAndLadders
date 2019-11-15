@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package factory;
+package strategy;
+
 import box.AbstractBox;
+import model.Player;
 
 /**
  *
  * @author lucas
  */
-public interface IfactoryBox {
-    AbstractBox createBox(BoxEnum tipo, int num, int eixoX, int eixoY, int specialX, int specialY);
+public interface Move {
+    public void move(AbstractBox box, Player p);
 }

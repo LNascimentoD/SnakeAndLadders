@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package box;
-
 /**
  *
  * @author lucas
@@ -16,6 +15,30 @@ public abstract class AbstractBox {
     public AbstractBox(int num, int eixoX, int eixoY){
         this.num = num;
         this.eixoX = eixoX;
+        this.eixoY = eixoY;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public int getEixoX() {
+        return eixoX;
+    }
+
+    public void setEixoX(int eixoX) {
+        this.eixoX = eixoX;
+    }
+
+    public int getEixoY() {
+        return eixoY;
+    }
+
+    public void setEixoY(int eixoY) {
         this.eixoY = eixoY;
     }
 }

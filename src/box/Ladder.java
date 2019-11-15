@@ -10,7 +10,34 @@ package box;
  * @author lucas
  */
 public class Ladder extends SpecialBox{ 
-    public Ladder(int num, int eixoX, int eixoY) {
+    private int topX;
+    private int topY;
+    private int numTop = 100;
+    
+    public Ladder(int num, int eixoX, int eixoY, int topX, int topY, int numTop) {
         super(num, eixoX, eixoY);
+        this.topX = topX;
+        this.topY = topY;
+        this.numTop = numTop;
+    }
+
+    public int getTopX() {
+        return topX;
+    }
+
+    public void setTopX(int topX) {
+        this.topX = topX;
+    }
+
+    public int getTopY() {
+        return topY;
+    }
+
+    public void setTopY(int topY) {
+        this.topY = topY;
+    }
+
+    public int getNumTop() {
+        return numTop;
     }
 }

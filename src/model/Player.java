@@ -10,6 +10,31 @@ package model;
  * @author lucas
  */
 public class Player {
-    int eixoX = 0;
-    int eixoY = 0;
+    private int eixoX = 0;
+    private int eixoY = 0;
+    private int posicao = 1;
+
+    public int getEixoX() {
+        return eixoX;
+    }
+
+    public void setEixoX(int eixoX) {
+        this.eixoX = eixoX;
+    }
+
+    public int getEixoY() {
+        return eixoY;
+    }
+
+    public void setEixoY(int eixoY) {
+        this.eixoY = eixoY;
+    }
+
+    public int getPosicao() {
+        return posicao;
+    }
+
+    public void setPosicao(int posicao) {
+        this.posicao = posicao;
+    }
 }
