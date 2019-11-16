@@ -5,18 +5,20 @@
  */
 package view;
 
+import model.Player;
+
 /**
  *
  * @author lucas
  */
 public class feedBoard {
-    private String path;
-    
-    public feedBoard(){
-        this.path = "../imagens/board.png";
+    public int getX(Player p){
+        return p.getEixoX();
     }
-    
-    public String getPath(){
-        return path;
+    public int getY(Player p){
+        return p.getEixoY();
+    }
+    public int getNum(Player p){
+        return p.getPosicao();
     }
 }
