@@ -44,10 +44,12 @@ public class CriaCasasTabuleiro {
     
     public ArrayList<AbstractBox> criaCasasTabuleiro(){  
         IfactoryBox f = new FactoryBox();
+        int i = 1;
+        boxes.add(f.createBox(BoxEnum.box, 0, 0, 0, 0, 0));
         
-        for(int x = 240; x <= 780; x += 60){
-            for(int y = 570; y >= 30; y -= 60){
-                for(int i = 1; i <= 100; i++){
+        for(int y = 570; y >= 30; y -= 60){
+            if((y/60)%2 == 0){
+                for(int x = 780; x >= 240; x -= 60){
                     if(cobra.contains(i)){
                         boxes.add(f.createBox(BoxEnum.snake_box, i, x, y, 100, 100));
                     }else if(escada.contains(i)){
@@ -55,10 +57,21 @@ public class CriaCasasTabuleiro {
                     }else{
                         boxes.add(f.createBox(BoxEnum.box, i, x, y, i, i));
                     }
+                    i++;
                 }
-            }
+            }else{   
+                for(int x = 240; x <= 780; x += 60){
+                    if(cobra.contains(i)){
+                        boxes.add(f.createBox(BoxEnum.snake_box, i, x, y, 100, 100));
+                    }else if(escada.contains(i)){
+                        boxes.add(f.createBox(BoxEnum.ladder_box, i, x, y, 100, 100));
+                    }else{
+                        boxes.add(f.createBox(BoxEnum.box, i, x, y, i, i));
+                    }
+                    i++;
+                }
+            }             
         }
-        
         return boxes;
     }
 }

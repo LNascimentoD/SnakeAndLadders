@@ -6,6 +6,8 @@
 package view;
 
 import board.Board;
+import box.Ladder;
+import box.Snake;
 import java.util.ArrayList;
 import model.Dice;
 import model.Player;
@@ -13,13 +15,21 @@ import snake.and.ladders.CriaCasasTabuleiro;
 import strategy.MoveBox;
 import strategy.MoveEnginner;
 import strategy.MoveLadder;
+import strategy.MoveSnake;
 
 /**
  *
  * @author lucas
  */
 public class screenGame extends javax.swing.JFrame {
-
+        Dice d = new Dice();
+        
+        Player p = new Player();
+        
+        feedBoard f = new feedBoard();
+        
+        
+        
     /**
      * Creates new form teste
      */
@@ -74,23 +84,27 @@ public class screenGame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Dice d = new Dice();
-        
-        Player p = new Player();
-        
-        feedBoard f = new feedBoard();
-        
         CriaCasasTabuleiro c = new CriaCasasTabuleiro();
         Board.getInstance().setBoxes(c.criaCasasTabuleiro());
         
-        MoveEnginner enginner = new MoveEnginner(new MoveBox());
-        enginner.move(Board.getInstance().getBox(f.getNum(p) + d.rollDice()), p);
+        int temp = p.getPosicao()+d.rollDice();
         
-
+        if(Board.getInstance().getBox(temp) instanceof Snake){
+            MoveEnginner enginner = new MoveEnginner(new MoveSnake());
+            enginner.move(Board.getInstance().getBox(temp), p);
+        }else if(Board.getInstance().getBox(temp) instanceof Ladder){
+            MoveEnginner enginner = new MoveEnginner(new MoveLadder());
+            enginner.move(Board.getInstance().getBox(temp), p);
+        }else{
+            MoveEnginner enginner = new MoveEnginner(new MoveBox());
+            enginner.move(Board.getInstance().getBox(temp), p);
+        }
         
         jLabel2.setLocation(f.getX(p), f.getY(p));
-       
-        System.out.println(Board.getInstance().getBox(f.getNum(p)).getEixoX() + " " + Board.getInstance().getBox(f.getNum(p)).getEixoY());     
+
+        System.out.println(temp);
+        System.out.println(p.getPosicao() + " " + p.getEixoX() + " " + p.getEixoY());     
+        System.out.println(Board.getInstance().getBox(p.getPosicao()));     
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
