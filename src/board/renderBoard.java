@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package snake.and.ladders;
+package board;
+
 import box.AbstractBox;
 import factory.BoxEnum;
 import factory.FactoryBox;
@@ -14,14 +15,14 @@ import java.util.ArrayList;
  *
  * @author lucas
  */
-public class CriaCasasTabuleiro {
+public class renderBoard {
     ArrayList<Integer> cobra;
     ArrayList<Integer> cauda;
     ArrayList<Integer> escada;
     ArrayList<Integer> topo;
     ArrayList<AbstractBox> boxes;
     
-    public CriaCasasTabuleiro(){
+    public renderBoard(){
         this.cobra = new ArrayList();
         this.escada = new ArrayList();
         this.boxes = new ArrayList();

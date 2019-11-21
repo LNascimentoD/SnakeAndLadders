@@ -15,13 +15,12 @@ import box.Snake;
  * @author lucas
  */
 public class FactoryBox implements IfactoryBox{
-    public AbstractBox createBox(BoxEnum tipo, int num, int eixoX, int eixoY, int specialX, int specialY){
+    public AbstractBox createBox(BoxEnum tipo, int num, int eixoX, int eixoY, int specialNum){
         switch(tipo){
             case snake_box:
-                return new Snake(num, eixoX, eixoY, specialX, specialY, 100);
+                return new Snake(num, eixoX, eixoY, specialNum);
             case ladder_box:
-                //100 é constante de teste
-                return new Ladder(num, eixoX, eixoY, specialX, specialY, 100);
+                return new Ladder(num, eixoX, eixoY, specialNum);
             default: return new Box(num, eixoX, eixoY);
         }
     }

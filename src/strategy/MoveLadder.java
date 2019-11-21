@@ -5,9 +5,10 @@
  */
 package strategy;
 
+import board.Board;
 import box.AbstractBox;
 import box.Ladder;
-import model.Player;
+import Players.Player;
 
 /**
  *
@@ -17,8 +18,8 @@ public class MoveLadder implements Move{
     public void move(AbstractBox ladder, Player p) {
         Ladder l = (Ladder)ladder;
         p.setPosicao(l.getNumTop());
-        p.setEixoX(l.getTopX());
-        p.setEixoY(l.getTopY());
+        p.setEixoX(Board.getInstance().getBox(l.getNumTop()).getEixoX());
+        p.setEixoY(Board.getInstance().getBox(l.getNumTop()).getEixoY());
     }
     
 }

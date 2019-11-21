@@ -11,5 +11,5 @@ import box.AbstractBox;
  * @author lucas
  */
 public interface IfactoryBox {
-    AbstractBox createBox(BoxEnum tipo, int num, int eixoX, int eixoY, int specialX, int specialY);
+    AbstractBox createBox(BoxEnum tipo, int num, int eixoX, int eixoY, int specialNum);
 }

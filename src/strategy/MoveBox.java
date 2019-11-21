@@ -6,7 +6,7 @@
 package strategy;
 
 import box.AbstractBox;
-import model.Player;
+import Players.Player;
 
 /**
  *

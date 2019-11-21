@@ -1,6 +1,6 @@
 package snake.and.ladders;
 
-import Iterator.PlayerIterator;
+import Game.controllerGame;
 import board.Board;
 import factory.BoxEnum;
 import factory.FactoryBox;

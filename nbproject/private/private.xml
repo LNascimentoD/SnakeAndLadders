@@ -3,18 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/box/Snake.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/snake/and/ladders/SnakeAndLadders.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/strategy/MoveGenerator.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/box/Box.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/board/Board.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/factory/FactoryBox.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/box/AbstractBox.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/factory/IfactoryBox.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/view/feedBoard.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/box/Ladder.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/box/SpecialBox.java</file>
-            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/factory/BoxEnum.java</file>
+            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/snake/and/ladders/CriaCasasTabuleiro.java</file>
+            <file>file:/home/lucas/NetBeansProjects/Snake-And-Ladders/src/view/screenGame.java</file>
         </group>
     </open-files>
 </project-private>

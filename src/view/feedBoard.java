@@ -5,20 +5,18 @@
  */
 package view;
 
-import model.Player;
+import Game.controllerGame;
+import Players.Player;
+import java.util.ArrayList;
 
 /**
  *
  * @author lucas
  */
 public class feedBoard {
-    public int getX(Player p){
-        return p.getEixoX();
-    }
-    public int getY(Player p){
-        return p.getEixoY();
-    }
-    public int getNum(Player p){
-        return p.getPosicao();
+    ArrayList<Player> player = controllerGame.getInstance().playerList();
+    
+    public Player getPlayer(int index){
+        return this.player.get(index);
     }
 }

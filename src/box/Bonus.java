@@ -9,15 +9,9 @@ package box;
  *
  * @author lucas
  */
-public class Ladder extends SpecialBox{ 
-    private int numTop;
-    
-    public Ladder(int num, int eixoX, int eixoY, int numTop) {
+public class Bonus extends SpecialBox{
+    public Bonus(int num, int eixoX, int eixoY) {
         super(num, eixoX, eixoY);
-        this.numTop = numTop;
     }
     
-    public int getNumTop() {
-        return numTop;
-    }
 }

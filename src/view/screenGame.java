@@ -5,6 +5,8 @@
  */
 package view;
 
+import Game.controllerGame;
+import Iterator.PlayerIterator;
 import board.Board;
 import box.Ladder;
 import box.Snake;
@@ -22,17 +24,8 @@ import strategy.MoveSnake;
  * @author lucas
  */
 public class screenGame extends javax.swing.JFrame {
-        Dice d = new Dice();
-        
-        Player p = new Player();
-        
         feedBoard f = new feedBoard();
         
-        
-        
-    /**
-     * Creates new form teste
-     */
     public screenGame() {
         initComponents();
         feedBoard f = new feedBoard();
@@ -49,6 +42,7 @@ public class screenGame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -63,6 +57,10 @@ public class screenGame extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/j1.jpeg"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 570, 40, 60));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/j1.jpeg"))); // NOI18N
+        jLabel4.setText("2");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 560, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tab2.jpeg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, 600));
@@ -83,28 +81,16 @@ public class screenGame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setPositions(){
+        feedBoard f = new feedBoard();
+        
+        jLabel2.setLocation(f.getPlayer(1).getEixoX(), f.getPlayer(1).getEixoY());
+        jLabel4.setLocation(f.getPlayer(0).getEixoX(), f.getPlayer(0).getEixoY());
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        CriaCasasTabuleiro c = new CriaCasasTabuleiro();
-        Board.getInstance().setBoxes(c.criaCasasTabuleiro());
-        
-        int temp = p.getPosicao()+d.rollDice();
-        
-        if(Board.getInstance().getBox(temp) instanceof Snake){
-            MoveEnginner enginner = new MoveEnginner(new MoveSnake());
-            enginner.move(Board.getInstance().getBox(temp), p);
-        }else if(Board.getInstance().getBox(temp) instanceof Ladder){
-            MoveEnginner enginner = new MoveEnginner(new MoveLadder());
-            enginner.move(Board.getInstance().getBox(temp), p);
-        }else{
-            MoveEnginner enginner = new MoveEnginner(new MoveBox());
-            enginner.move(Board.getInstance().getBox(temp), p);
-        }
-        
-        jLabel2.setLocation(f.getX(p), f.getY(p));
-
-        System.out.println(temp);
-        System.out.println(p.getPosicao() + " " + p.getEixoX() + " " + p.getEixoY());     
-        System.out.println(Board.getInstance().getBox(p.getPosicao()));     
+        controllerGame.getInstance().teste();
+        setPositions();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -152,6 +138,7 @@ public class screenGame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

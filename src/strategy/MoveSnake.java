@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 package strategy;
+import board.Board;
 import box.AbstractBox;
 import box.Snake;
 import box.SpecialBox;
-import model.Player;
+import Players.Player;
 
 /**
  *
@@ -16,8 +17,9 @@ import model.Player;
 public class MoveSnake implements Move{
     public void move(AbstractBox snake, Player p) {
         Snake s = (Snake)snake;
-        p.setPosicao(s.getNum());
-        p.setEixoX(s.getTailX());
-        p.setEixoY(s.getTailY());
+        p.setPosicao(s.getNumTail());
+        p.setEixoX(Board.getInstance().getBox(s.getNumTail()).getEixoX());
+        p.setEixoY(Board.getInstance().getBox(s.getNumTail()).getEixoY());
+        
     }
 }
