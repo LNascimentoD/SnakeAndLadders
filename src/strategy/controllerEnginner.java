@@ -7,6 +7,7 @@ package strategy;
 
 import Players.Player;
 import box.AbstractBox;
+import box.Box;
 import box.Ladder;
 import box.Snake;
 
@@ -24,8 +25,11 @@ public class controllerEnginner {
         }else if(box instanceof Ladder){
             enginner.setMove(new MoveLadder());
             enginner.move(box, p);
-        }else{
+        }else if(box instanceof Box){
             enginner.setMove(new MoveBox());
+            enginner.move(box, p);
+        }else{            
+            enginner.setMove(new MoveBonus());
             enginner.move(box, p);
         }
     }

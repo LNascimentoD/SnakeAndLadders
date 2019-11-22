@@ -13,6 +13,7 @@ import strategy.MoveBox;
 import strategy.MoveEnginner;
 import strategy.MoveLadder;
 import view.screenGame;
+import view.welcome;
 
 
 /**
@@ -25,8 +26,8 @@ public class SnakeAndLadders {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        screenGame s = new screenGame();
-        s.setVisible(true);
+        welcome w = new welcome();
+        w.setVisible(true);
     }
     
 }

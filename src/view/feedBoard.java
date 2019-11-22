@@ -19,4 +19,12 @@ public class feedBoard {
     public Player getPlayer(int index){
         return this.player.get(index);
     }
+    
+    public int playerSize(){
+        return this.player.size();
+    }
+    
+    public String getMessage(){
+        return controllerGame.getInstance().menssage();
+    }
 }

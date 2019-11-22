@@ -9,9 +9,8 @@ package box;
  *
  * @author lucas
  */
-public class Bonus extends SpecialBox{
+public class Bonus extends SpecialBox{    
     public Bonus(int num, int eixoX, int eixoY) {
         super(num, eixoX, eixoY);
     }
-    
 }

@@ -10,10 +10,14 @@ package Players;
  * @author lucas
  */
 public class Player {
-    private int eixoX = 0;
-    private int eixoY = 0;
+    private int eixoX = 240;
+    private int eixoY = 570;
     private int posicao = 1;
+    private String numero;
     
+    public Player(String numero){
+        this.numero = numero;
+    }
 
     public int getEixoX() {
         return eixoX;
@@ -37,5 +41,9 @@ public class Player {
 
     public void setPosicao(int posicao) {
         this.posicao = posicao;
+    }
+    
+    public String getNumero(){
+        return this.numero;
     }
 }

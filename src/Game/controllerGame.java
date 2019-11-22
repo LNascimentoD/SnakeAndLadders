@@ -5,6 +5,7 @@
  */
 package Game;
 
+import Menssegers.controllerMenssegers;
 import Players.Player;
 import Players.controllerPlayer;
 import board.Board;
@@ -18,10 +19,11 @@ import strategy.controllerEnginner;
  * @author lucas
  */
 public class controllerGame {   
-    private controllerPlayer cp = new controllerPlayer(2);
-    private controllerEnginner enginner = new controllerEnginner();
+    private controllerPlayer cp;
     private controllerBoard cb = new controllerBoard();
+    private controllerTurn ct;
     private static controllerGame game;
+    private controllerMenssegers cm = new controllerMenssegers(ct);
     
     private controllerGame(){
     }
@@ -33,17 +35,29 @@ public class controllerGame {
         
         return game;
     }
+    
+    public void setPlayers(int quantidade){
+        cp = new controllerPlayer(quantidade);
+    }
 
     public ArrayList<Player> playerList(){
         return cp.getPlayers();
     }
     
-    public void teste(){
+    public void jogada(){
         Dice d = new Dice();
+        int temp = d.rollDice();
         Player p = cp.nextPlayer();
-        
-        enginner.move(Board.getInstance().getBox(p.getPosicao()+d.rollDice()), p);
-        System.out.println(p);
-        System.out.println(p.getPosicao() + " " + p.getEixoX() + " " + p.getEixoY());
+
+        if(temp + p.getPosicao() <= 100){
+            ct = new controllerTurn(p, temp);
+            ct.jogada();
+        }        
+    }
+    
+    public String menssage(){
+        String resultado;
+        resultado = "O jogador "+ ct.getPlayer() +" tirou: " + String.valueOf(ct.getDado());
+        return resultado;
     }
 }

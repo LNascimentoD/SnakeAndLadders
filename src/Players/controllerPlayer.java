@@ -19,8 +19,8 @@ public class controllerPlayer {
     public controllerPlayer(int quantidade){
         this.players = new ArrayList();
         
-        for(int i = 0; i < quantidade; i++){
-            Player p = new Player();
+        for(int i = 1; i <= quantidade; i++){
+            Player p = new Player(String.valueOf(i));
             this.players.add(p);
         }
         
