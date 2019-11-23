@@ -77,9 +77,7 @@ public class welcome extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int temp = Integer.parseInt(jTextField1.getText());
         controllerGame.getInstance().setPlayers(temp);
-        screenGame s = new screenGame();
-        s.setVisible(true);
-        s.setPositions();
+        controllerGame.getInstance().startGame();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

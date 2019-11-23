@@ -13,6 +13,7 @@ import board.controllerBoard;
 import java.util.ArrayList;
 import model.Dice;
 import strategy.controllerEnginner;
+import view.screenGame;
 
 /**
  *
@@ -23,9 +24,16 @@ public class controllerGame {
     private controllerBoard cb = new controllerBoard();
     private controllerTurn ct;
     private static controllerGame game;
-    private controllerMenssegers cm = new controllerMenssegers(ct);
+    private controllerMenssegers cm;
+    private String mensagem = "";
+    private screenGame s;
     
     private controllerGame(){
+    }
+    
+    public void startGame(){
+        s = new screenGame();
+        s.setVisible(true);
     }
     
     public static controllerGame getInstance(){
@@ -52,12 +60,19 @@ public class controllerGame {
         if(temp + p.getPosicao() <= 100){
             ct = new controllerTurn(p, temp);
             ct.jogada();
-        }        
+            cm = new controllerMenssegers(ct);
+            cm.menssage();
+        }  
+        
     }
     
-    public String menssage(){
-        String resultado;
-        resultado = "O jogador "+ ct.getPlayer() +" tirou: " + String.valueOf(ct.getDado());
-        return resultado;
+    public void setMenssage(){
+        System.out.println(this.mensagem);
+        this.mensagem = "O jogador "+ ct.getPlayer() +" tirou: " + String.valueOf(ct.getDado());
+    }
+    
+    public String getMenssage(){
+        s.setJLabel(this.mensagem);
+        return this.mensagem;
     }
 }

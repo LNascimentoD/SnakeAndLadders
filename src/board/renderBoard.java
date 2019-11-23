@@ -21,6 +21,7 @@ public class renderBoard {
     ArrayList<Integer> escada;
     ArrayList<Integer> topo;
     ArrayList<AbstractBox> boxes;
+    ArrayList<Integer> bonus;
     
     public renderBoard(){
         this.cobra = new ArrayList();
@@ -28,6 +29,7 @@ public class renderBoard {
         this.boxes = new ArrayList();
         this.cauda = new ArrayList();
         this.topo = new ArrayList();
+        this.bonus = new ArrayList();
         
         cobra.add(27);
         cobra.add(40);
@@ -62,6 +64,14 @@ public class renderBoard {
         topo.add(69);
         topo.add(81);
         topo.add(92);
+        
+        bonus.add(9);
+        bonus.add(21);
+        bonus.add(17);
+        bonus.add(58);
+        bonus.add(70);
+        bonus.add(85);
+        
     }
     
     public ArrayList<AbstractBox> criaCasasTabuleiro(){  
@@ -80,6 +90,8 @@ public class renderBoard {
                     }else if(escada.contains(i)){
                         boxes.add(f.createBox(BoxEnum.ladder_box, i, x, y, topo.get(topoCont)));
                         topoCont++;
+                    }else if(bonus.contains(i)){
+                        boxes.add(f.createBox(BoxEnum.bonus_box, i, x, y, i));
                     }else{
                         boxes.add(f.createBox(BoxEnum.box, i, x, y, i));
                     }
@@ -93,6 +105,8 @@ public class renderBoard {
                     }else if(escada.contains(i)){
                         boxes.add(f.createBox(BoxEnum.ladder_box, i, x, y, topo.get(topoCont)));
                         topoCont++;
+                    }else if(bonus.contains(i)){
+                        boxes.add(f.createBox(BoxEnum.bonus_box, i, x, y, i));
                     }else{
                         boxes.add(f.createBox(BoxEnum.box, i, x, y, i));
                     }

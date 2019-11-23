@@ -6,6 +6,7 @@
 package factory;
 
 import box.AbstractBox;
+import box.Bonus;
 import box.Box;
 import box.Ladder;
 import box.Snake;
@@ -21,6 +22,8 @@ public class FactoryBox implements IfactoryBox{
                 return new Snake(num, eixoX, eixoY, specialNum);
             case ladder_box:
                 return new Ladder(num, eixoX, eixoY, specialNum);
+            case bonus_box:
+                return new Bonus(num, eixoX, eixoY);
             default: return new Box(num, eixoX, eixoY);
         }
     }

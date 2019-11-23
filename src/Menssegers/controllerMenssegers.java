@@ -7,6 +7,7 @@ package Menssegers;
 
 import Game.controllerTurn;
 import Players.Player;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,11 +20,10 @@ public class controllerMenssegers {
         this.ct = ct;
     }
     
-    public String getPlayer(){
-        return " ";
-    }
-    
-    public int getDado(){
-        return ct.getDado();
+    public void menssage(){
+        String resultado;
+        resultado = "O jogador "+ ct.getPlayer() +" tirou: " + String.valueOf(ct.getDado());
+        JOptionPane.showMessageDialog(null, resultado);
+        System.out.println(resultado);
     }
 }

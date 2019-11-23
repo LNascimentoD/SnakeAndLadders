@@ -12,7 +12,8 @@ package factory;
 public enum BoxEnum {
     snake_box(1),
     ladder_box(2),
-    box(3);
+    box(3),
+    bonus_box(4);
     
     private int type;
     

@@ -27,7 +27,7 @@ public class screenGame extends javax.swing.JFrame {
         
     public screenGame() {
         initComponents();
-        feedBoard f = new feedBoard();
+        jLabel7.setText("Oi");
     }
 
     /**
@@ -103,9 +103,12 @@ public class screenGame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+    public void setJLabel(String string){
+        jLabel7.setText(string);
+    }
+    
     public void setPositions(){
-        feedBoard f = new feedBoard(); 
-        
+        feedBoard f = new feedBoard();
         switch(f.playerSize()){
             case 2:
                 jLabel2.setLocation(f.getPlayer(0).getEixoX(), f.getPlayer(0).getEixoY());
@@ -129,7 +132,6 @@ public class screenGame extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         controllerGame.getInstance().jogada();
-        jLabel7.setText(controllerGame.getInstance().menssage());
         setPositions();
     }//GEN-LAST:event_jButton1ActionPerformed
 

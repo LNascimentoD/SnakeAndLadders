@@ -20,10 +20,10 @@ public class MoveBonus implements Move{
         int temp = d.rollDice();
         AbstractBox newbox;
         
-        if(temp >= 3){
-            newbox = Board.getInstance().getBox(temp - box.getNum());
+        if(temp > 3){
+            newbox = Board.getInstance().getBox((temp - 3) + box.getNum());
         }else{
-            newbox = Board.getInstance().getBox(temp - box.getNum());
+            newbox = Board.getInstance().getBox(box.getNum() - temp);
         }
         
         p.setEixoX(newbox.getEixoX());
