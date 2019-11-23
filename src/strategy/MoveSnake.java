@@ -7,7 +7,6 @@ package strategy;
 import board.Board;
 import box.AbstractBox;
 import box.Snake;
-import box.SpecialBox;
 import Players.Player;
 
 /**

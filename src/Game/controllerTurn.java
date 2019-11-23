@@ -8,6 +8,7 @@ package Game;
 import Players.Player;
 import board.Board;
 import strategy.controllerEnginner;
+import view.winner;
 
 /**
  *
@@ -16,30 +17,36 @@ import strategy.controllerEnginner;
 public class controllerTurn {
     private Player player;
     private controllerEnginner enginner;
-    private int dado;
+    private int dice;
     
-    public controllerTurn(Player p, int dado){
+    public controllerTurn(Player p, int dice){
         this.player = p;
         this.enginner = new controllerEnginner();
-        this.dado = dado;
+        this.dice = dice;
     }
     
-    public void jogada(){
-        enginner.move(Board.getInstance().getBox(this.player.getPosicao()+ this.dado), this.player);
+    public int jogada(){
+        if(dice + player.getPosicao() == 100){
+            winner w = new winner(player.getNumero());
+            w.setVisible(true);
+            return 1;
+        }else if(dice + player.getPosicao() <= 99){
+            enginner.move(Board.getInstance().getBox(this.player.getPosicao()+ this.dice), this.player);
+            return 2;
+        }else{
+            return 3;
+        }
     }
     
-    public String getPlayer(){
+    public int getPlayer(){
         return this.player.getNumero();
     }
     
-    public int getDado(){
-        return this.dado;
+    public int getPositionPlayer(){
+        return this.player.getPosicao();
     }
     
-     public boolean winner(Player p){
-        if(p.getPosicao() == 100){
-            return true;
-        }
-        return false;
+    public int getDado(){
+        return this.dice;
     }
 }

@@ -20,7 +20,7 @@ public class controllerPlayer {
         this.players = new ArrayList();
         
         for(int i = 1; i <= quantidade; i++){
-            Player p = new Player(String.valueOf(i));
+            Player p = new Player(i);
             this.players.add(p);
         }
         
@@ -33,5 +33,9 @@ public class controllerPlayer {
     
     public ArrayList<Player> getPlayers(){
        return this.players; 
+    }
+    
+    public int sizePlayers(){
+       return this.players.size(); 
     }
 }

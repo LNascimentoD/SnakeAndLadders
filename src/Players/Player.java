@@ -13,9 +13,9 @@ public class Player {
     private int eixoX = 240;
     private int eixoY = 570;
     private int posicao = 1;
-    private String numero;
+    private int numero;
     
-    public Player(String numero){
+    public Player(int numero){
         this.numero = numero;
     }
 
@@ -43,7 +43,7 @@ public class Player {
         this.posicao = posicao;
     }
     
-    public String getNumero(){
+    public int getNumero(){
         return this.numero;
     }
 }

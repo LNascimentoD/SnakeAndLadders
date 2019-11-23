@@ -15,7 +15,6 @@ import java.util.ArrayList;
  */
 public class feedBoard {
     ArrayList<Player> player = controllerGame.getInstance().playerList();
-    //String menssage = controllerGame.getInstance().getMenssage();
     
     public Player getPlayer(int index){
         return this.player.get(index);
@@ -23,9 +22,5 @@ public class feedBoard {
     
     public int playerSize(){
         return this.player.size();
-    }
-    
-    public String getMessage(){
-        return "";
     }
 }

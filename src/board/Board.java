@@ -19,10 +19,6 @@ public class Board {
         return board;
     }
 
-    public ArrayList<AbstractBox> getBoxes() {
-        return boxes;
-    }
-
     public void setBoxes(ArrayList<AbstractBox> boxes) {
         this.boxes = boxes;
     }
