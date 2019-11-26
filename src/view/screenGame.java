@@ -6,27 +6,18 @@
 package view;
 
 import Game.controllerGame;
-import board.Board;
-import box.Ladder;
-import box.Snake;
-import java.util.ArrayList;
-import model.Dice;
-import model.Player;
-import snake.and.ladders.CriaCasasTabuleiro;
-import strategy.MoveBox;
-import strategy.MoveEnginner;
-import strategy.MoveLadder;
-import strategy.MoveSnake;
+
 
 /**
  *
  * @author lucas
  */
 public class screenGame extends javax.swing.JFrame {
-        feedBoard f = new feedBoard();
+    feedBoard f = new feedBoard();
         
     public screenGame() {
         initComponents();
+        f = new feedBoard();
     }
 
     /**
@@ -39,10 +30,10 @@ public class screenGame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -56,19 +47,19 @@ public class screenGame extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(950, 700));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imageedit_1_5555636499.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 60, 60));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imageedit_3_7058835587.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imageedit_5_9662917299.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/imageedit_7_6228820088.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/j4num.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 460, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tab2.jpeg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/j3num.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/j2num.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, -1, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/j1num.png"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 60, 60));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/tab3.jpeg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, 600));
 
         jButton1.setText("Rolar dados");
@@ -77,10 +68,10 @@ public class screenGame extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 590, 130, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 130, 30));
 
         jLabel3.setText("Cobras e Escadas");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 50, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
         jButton2.setText("Iniciar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -88,7 +79,7 @@ public class screenGame extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 550, 80, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 550, 80, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 660));
 
@@ -96,22 +87,21 @@ public class screenGame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     public void setPositions(){
-        feedBoard f = new feedBoard();
-        switch(f.playerSize()){
+        switch(this.f.playerSize()){
             case 2:
-                jLabel2.setLocation(f.getPlayer(0).getEixoX(), f.getPlayer(0).getEixoY());
-                jLabel4.setLocation(f.getPlayer(1).getEixoX(), f.getPlayer(1).getEixoY());
+                jLabel2.setLocation(f.getXPlayer(0), f.getYPlayer(0));
+                jLabel4.setLocation(f.getXPlayer(1), f.getYPlayer(1));
                 break;
             case 3:
-                jLabel2.setLocation(f.getPlayer(0).getEixoX(), f.getPlayer(0).getEixoY());
-                jLabel4.setLocation(f.getPlayer(1).getEixoX(), f.getPlayer(1).getEixoY());
-                jLabel5.setLocation(f.getPlayer(2).getEixoX(), f.getPlayer(2).getEixoY());
+                jLabel2.setLocation(f.getXPlayer(0), f.getYPlayer(0));
+                jLabel4.setLocation(f.getXPlayer(1), f.getYPlayer(1));
+                jLabel5.setLocation(f.getXPlayer(2), f.getYPlayer(2));
                 break;
             case 4:
-                jLabel2.setLocation(f.getPlayer(0).getEixoX(), f.getPlayer(0).getEixoY());
-                jLabel4.setLocation(f.getPlayer(1).getEixoX(), f.getPlayer(1).getEixoY());
-                jLabel5.setLocation(f.getPlayer(2).getEixoX(), f.getPlayer(2).getEixoY());
-                jLabel6.setLocation(f.getPlayer(3).getEixoX(), f.getPlayer(3).getEixoY());
+                jLabel2.setLocation(f.getXPlayer(0), f.getYPlayer(0));
+                jLabel4.setLocation(f.getXPlayer(1), f.getYPlayer(1));
+                jLabel5.setLocation(f.getXPlayer(2), f.getYPlayer(2));
+                jLabel6.setLocation(f.getXPlayer(3), f.getYPlayer(3));
                 break;
             default:
                 break;
@@ -154,6 +144,7 @@ public class screenGame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                setPositions();
                 new screenGame().setVisible(true);
             }
         });
@@ -167,7 +158,7 @@ public class screenGame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

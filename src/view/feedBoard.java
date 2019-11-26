@@ -16,8 +16,12 @@ import java.util.ArrayList;
 public class feedBoard {
     ArrayList<Player> player = controllerGame.getInstance().playerList();
     
-    public Player getPlayer(int index){
-        return this.player.get(index);
+    public int getXPlayer(int index){
+        return this.player.get(index).getEixoX();
+    }
+    
+    public int getYPlayer(int index){
+        return this.player.get(index).getEixoY();
     }
     
     public int playerSize(){

@@ -5,13 +5,13 @@
  */
 package board;
 
+import box.AbstractBox;
+import java.util.ArrayList;
+
 /**
  *
  * @author lucas
  */
-public class controllerBoard {
-    public controllerBoard(){
-        IRenderBoard r = (IRenderBoard) new renderBoard();
-        Board.getInstance().setBoxes(r.renderBoxes());
-    }
+public interface IRenderBoard {
+    public ArrayList<AbstractBox> renderBoxes();
 }

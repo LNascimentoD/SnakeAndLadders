@@ -42,8 +42,13 @@ public class controllerGame {
         return game;
     }
     
-    public void setPlayers(int quantidade){
-        controlPlayer = new controllerPlayer(quantidade);
+    public boolean setPlayers(int quantidade){
+        if(quantidade > 4 || quantidade < 2){
+            return false;
+        }else{
+            controlPlayer = new controllerPlayer(quantidade);
+            return true;
+        }
     }
 
     public ArrayList<Player> playerList(){
@@ -59,7 +64,7 @@ public class controllerGame {
             
         if(controlTurn.jogada() == 2){
             controlMessage = new controllerMessegers(controlTurn);
-            controlMessage.message(controlPlayer.sizePlayers());
+            controlMessage.message(controlPlayer.sizePlayers(), controlTurn.getBox());
         }else if(controlTurn.jogada() == 3){
             controlMessage = new controllerMessegers(controlTurn);
             controlMessage.message();

@@ -15,7 +15,7 @@ import java.util.ArrayList;
  *
  * @author lucas
  */
-public class renderBoard {
+public class renderBoard implements IRenderBoard{
     ArrayList<Integer> cobra;
     ArrayList<Integer> cauda;
     ArrayList<Integer> escada;
@@ -74,7 +74,7 @@ public class renderBoard {
         
     }
     
-    public ArrayList<AbstractBox> criaCasasTabuleiro(){  
+    public ArrayList<AbstractBox> renderBoxes(){  
         IfactoryBox f = new FactoryBox();
         int i = 1;
         boxes.add(f.createBox(BoxEnum.box, 0, 0, 0, 0));

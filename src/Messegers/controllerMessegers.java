@@ -6,6 +6,11 @@
 package Messegers;
 
 import Game.controllerTurn;
+import board.Board;
+import box.AbstractBox;
+import box.Bonus;
+import box.Ladder;
+import box.Snake;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,7 +24,7 @@ public class controllerMessegers {
         this.controlTurn = ct;
     }
     
-    public void message(int playerSize){
+    public void message(int playerSize, AbstractBox box){
         String resultado;
         int numberPlayer = controlTurn.getPlayer();
         
@@ -27,6 +32,16 @@ public class controllerMessegers {
             resultado = "O jogador "+ numberPlayer +" tirou: " + String.valueOf(controlTurn.getDado()) + " O jogador " + (numberPlayer+1) + " é o proximo a jogar.";
         }else{
             resultado = "O jogador "+ numberPlayer +" tirou: " + String.valueOf(controlTurn.getDado()) + " O jogador 1 é o proximo a jogar.";
+        }
+                
+        if(box instanceof Snake){
+            resultado += " Eita, caiu na cabeça de uma cobra.";
+        }else if(box instanceof Ladder){
+            resultado += " Eba, caiu na base de uma escada.";
+        }else if(box instanceof Bonus){
+            resultado += " Opa, caiu em uma casa bônus.";
+        }else{
+            resultado += " Caiu em uma casa normal. :|";
         }
         
         JOptionPane.showMessageDialog(null, resultado);
