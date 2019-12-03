@@ -10,7 +10,6 @@ import Players.Player;
 import Players.controllerPlayer;
 import board.controllerBoard;
 import java.util.ArrayList;
-import model.Dice;
 import view.screenGame;
 
 /**
@@ -56,11 +55,9 @@ public class controllerGame {
     }
     
     public void jogada(){
-        Dice dice = new Dice();
-        int temp = dice.rollDice();
         Player p = controlPlayer.nextPlayer();
 
-        controlTurn = new controllerTurn(p, temp);
+        controlTurn = new controllerTurn(p);
             
         if(controlTurn.jogada() == 2){
             controlMessage = new controllerMessegers(controlTurn);
@@ -69,6 +66,8 @@ public class controllerGame {
             controlMessage = new controllerMessegers(controlTurn);
             controlMessage.message();
         }else{
+            controlMessage = new controllerMessegers(controlTurn);
+            controlMessage.winner();
             screenGame.setVisible(false);
         }
     }

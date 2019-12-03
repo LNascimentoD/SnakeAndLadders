@@ -8,23 +8,25 @@ package Game;
 import Players.Player;
 import board.Board;
 import box.AbstractBox;
+import model.Dice;
 import strategy.controllerEnginner;
-import view.winner;
 
 /**
  *
  * @author lucas
  */
 public class controllerTurn {
-    private Player player;
-    private controllerEnginner enginner;
-    private int dice;
-    private AbstractBox box;
+    private Player player; // Jogador do turno
+    private controllerEnginner enginner; // Motor de movimentação
+    private int dice; // Valor do dado jogado nesse turno
+    private AbstractBox box; // Casa para onde o jogador deve ir no final desse turno
     
-    public controllerTurn(Player player, int dice){
+    public controllerTurn(Player player){
         this.player = player;
         this.enginner = new controllerEnginner();
-        this.dice = dice;
+        
+        Dice d = new Dice();
+        this.dice = d.rollDice();
         
         if((player.getPosicao()+ dice) <= 100){
             this.box = Board.getInstance().getBox(player.getPosicao()+ dice);
@@ -33,8 +35,6 @@ public class controllerTurn {
     
     public int jogada(){
         if(dice + player.getPosicao() == 100){
-            winner w = new winner(player.getNumero());
-            w.setVisible(true);
             return 1;
         }else if(dice + player.getPosicao() <= 99){
             enginner.move(box, this.player);

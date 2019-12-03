@@ -6,12 +6,12 @@
 package Messegers;
 
 import Game.controllerTurn;
-import board.Board;
 import box.AbstractBox;
 import box.Bonus;
 import box.Ladder;
 import box.Snake;
 import javax.swing.JOptionPane;
+import view.winner;
 
 /**
  *
@@ -51,5 +51,12 @@ public class controllerMessegers {
         int numberPlayer = controlTurn.getPlayer();
         
         JOptionPane.showMessageDialog(null, "O jogador: " + numberPlayer + " tirou mais do que o necessário e perdeu a vez :(");
+    }
+    
+    public void winner(){
+        JOptionPane.showMessageDialog(null, "O jogador: " + controlTurn.getPlayer() + " tirou " + controlTurn.getDado() + " e venceu!");
+        
+        winner w = new winner(controlTurn.getPlayer());
+        w.setVisible(true);
     }
 }
